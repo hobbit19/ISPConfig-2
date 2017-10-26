@@ -19,5 +19,5 @@ https://www.howtoforge.com/tutorial/perfect-server-centos-7-3-apache-mysql-php-p
 
 * CentOS 7 Install
 ```shell
-cd /usr/local/src; wget --no-check-certificate -O installer.tgz "https://github.com/ysyukr/ISPConfig/master"; tar zxvf installer.tgz; cd *ispconfig*; bash install.sh
+cd /usr/local/src; wget --no-check-certificate -O installer.tgz "https://github.com/ysyukr/ISPConfig/tarball/master"; tar zxvf installer.tgz; cd *ispconfig*; bash install.sh
 ```
