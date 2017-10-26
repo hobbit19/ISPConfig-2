@@ -148,7 +148,7 @@ exec 2>&1
     chmod a+x ./certbot-auto
     CERT_BOT=$(expect -c "
         set timeout 20
-        spawn ./certbot-auto
+        spawn /usr/local/src/certbot/certbot-auto
         expect \"name(s) (comma and/or space separated) (Enter 'c' to cancel):\"
         send \"c\r\"
         expect eof
