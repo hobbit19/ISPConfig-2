@@ -204,6 +204,7 @@ InstallUbuntuServer() {
 # Roundcube Webmail
     echo -n "Roundcube Webmail install... "
 	echo "roundcube-core roundcube/dbconfig-install boolean true" | debconf-set-selections
+    echo "roundcube-core roundcube/dbconfig-install boolean yes" | debconf-set-selections
 	echo "roundcube-core roundcube/database-type select mysql" | debconf-set-selections
 	echo "roundcube-core roundcube/mysql/admin-pass password $CFG_MYSQL_ROOT_PWD" | debconf-set-selections
 	echo "roundcube-core roundcube/db/dbname string roundcube" | debconf-set-selections
