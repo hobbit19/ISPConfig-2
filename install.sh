@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 #
 # ISPConfig 3 Install script.
 #
@@ -18,14 +18,14 @@ NC='\033[0m' # No Color
 # Current directory
 PWD=$(pwd);
 
-# Check Linux distros
-source $PWD/functions/distros_check.sh
-echo "Checking your system, please wait..."
-CheckLinux
-
 # Load Script
 source $PWD/functions/*.sh
 source $PWD/distros/$DISTRO/*.sh
+
+# Check Linux distros
+echo "Checking your system, please wait..."
+CheckLinux
+
 
 clear
 
