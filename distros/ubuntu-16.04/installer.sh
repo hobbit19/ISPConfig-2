@@ -104,10 +104,11 @@ InstallUbuntuServer() {
     echo "mailman mailman/site_languages multiselect en ko" | debconf-set-selections
     echo "mailman mailman/default_server_language en" | debconf-set-selections
     echo "mailman mailman/used_languages en" | debconf-set-selections
+    echo "mailman mailman/site en" | debconf-set-selections
     echo "postfix postfix/main_mailer_type select Internet Site" | debconf-set-selections
     echo "postfix postfix/mailname string $CFG_HOSTNAME_FQDN" | debconf-set-selections
-    apt-get -yqq install mailman
-    newlist -q mailman ${MMLISTOWNER} ${MMLISTPASS}
+    apt-get -yqq install mailman > /dev/null 2>&1
+    newlist -q mailman ${MMLISTOWNER} ${MMLISTPASS}  > /dev/null 2>&1
 
     echo "## mailman mailing list" >> /etc/aliases
     echo "mailman:              \"|/var/lib/mailman/mail/mailman post mailman\"" >> /etc/aliases
@@ -143,7 +144,7 @@ InstallUbuntuServer() {
 
 # Bind
     echo -n "Bind install..."
-    apt-get -yqq install bind9 dnsutils haveged
+    apt-get -yqq install bind9 dnsutils haveged  > /dev/null 2>&1
     echo -e "[${green}DONE${NC}]\n"
 
 # Vlogger, Webalizer, and AWstats
@@ -156,7 +157,7 @@ InstallUbuntuServer() {
     echo -n "Jailkit install... "
     cd /usr/local/src
     wget http://olivier.sessink.nl/jailkit/jailkit-2.19.tar.gz > /dev/null 2>&1 
-    tar xvfz jailkit-2.19.tar.gz
+    tar xvfz jailkit-2.19.tar.gz  > /dev/null 2>&1
     cd jailkit-2.19
     ./debian/rules binary > /dev/null 2>&1
     cd ..

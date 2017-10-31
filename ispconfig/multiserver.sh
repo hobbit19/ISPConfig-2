@@ -7,7 +7,7 @@ ISPConfigMultiServerInstall(){
     cd /usr/local/src
     wget https://www.ispconfig.org/downloads/ISPConfig-3-stable.tar.gz
     tar xfz ISPConfig-3-stable.tar.gz
-    cd ispconfig3_install/install/
+    cd /usr/local/src/ispconfig3_install/install/
     echo "Create INI file"
     touch autoinstall.ini
 	echo "[install]" > autoinstall.ini
