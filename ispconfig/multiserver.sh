@@ -1,4 +1,5 @@
-# ISPConfig Single Server Install
+# ISPConfig Multi Server Install
+# 기본 설치 이후, 멀티서버 자동설치 설정
 
 ISPConfigMultiServerInstall(){
     

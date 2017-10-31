@@ -1,10 +1,7 @@
-#!/bin/bash
-#
 # CentOS 7 ISPConfig 3 Standard(Single Server) Automation Script
 # Install Manual : https://www.howtoforge.com/tutorial/perfect-server-centos-7-3-apache-mysql-php-pureftpd-postfix-dovecot-and-ispconfig
-# Create Date : 2017-10-26
-# Made by ysyuk910
-#
+# CentOS 7 버전용 ISPConfig 기본설치 스크립트.
+# 설치 매뉴얼에 따라 자동설치되록 설정
 
 InstallCentOSServer() {
 # hostname

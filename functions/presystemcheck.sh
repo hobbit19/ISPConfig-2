@@ -1,4 +1,5 @@
 # Presystem check
+# root 권한 및 네트워크연결, 기존 버전 확인
 
 PreSystemCheck() {
 # Check if user is root

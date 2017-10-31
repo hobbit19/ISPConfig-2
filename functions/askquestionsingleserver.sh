@@ -1,4 +1,5 @@
 # Ask Question Single Server
+# 멀티 서버 선택시 필요 응답 부분, SSL 제외하고 미입력시 다음으로 안넘어감
 AskQuestionsSingleServer() {
     echo "Please enter the information required for installation."
 

@@ -1,4 +1,5 @@
 # Linux distros check
+# 리눅스 베포판 체크하여 OS에 맞는 폴더 지정
 
 LinuxDistros() {
 #Extract information on system

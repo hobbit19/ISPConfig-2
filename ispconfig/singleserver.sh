@@ -1,4 +1,5 @@
 # ISPConfig Single Server Install
+# 기본 설치 이후, 단일 서버 자동설치
 
 ISPConfigSingleServerInstall(){
     

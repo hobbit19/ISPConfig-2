@@ -1,9 +1,7 @@
-#!/bin/bash
-#
-# Ubuntu 16.04 ISPConfig 3 Standard(Single Server) Automation Script
+# Ubuntu 16.04 ISPConfig Base Installer
 # Install Manual : https://www.howtoforge.com/tutorial/perfect-server-ubuntu-16.04-with-apache-php-myqsl-pureftpd-bind-postfix-doveot-and-ispconfig/
-# Create Date : 2017-10-30
-# Made by ysyuk910
+# 우분투 16.04 LTS 버전용 ISPConfig 기본 설치 스크립트.
+# 설치 매뉴얼에 따라 자동으로 설치되도록 설정
 #
 InstallUbuntuServer() {
 # hostname
