@@ -1,5 +1,4 @@
-# ISPConfig 3 Automation Instll Script
-# (ISPConfig 3 자동설치 스크립트)
+# ISPConfig 3 Instll Script(ISPConfig 3 설치 스크립트)
 
 Tested on(테스트 확인)
 - CentOS 7 ([KSCloud](http://www.kscloud.kr/))
