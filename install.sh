@@ -21,8 +21,9 @@ PWD=$(pwd);
 # Load Script
 source $PWD/functions/presystemcheck.sh
 source $PWD/functions/distros_check.sh
-source $PWD/functions/askquestionsingleserver.sh
-source $PWD/functions/askquestionmultiserver.sh
+source $PWD/functions/askquestionsingleserver.s
+source $PWD/functions/askquestionmultiserver.shh
+source $PWD/functions/passwordgen.sh
 source $PWD/ispconfig/singleserver.sh
 source $PWD/ispconfig/multiserver.sh
 

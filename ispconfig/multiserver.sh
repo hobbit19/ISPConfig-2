@@ -35,7 +35,7 @@ ISPConfigMultiServerInstall(){
 	echo
 	echo "[expert]" >> autoinstall.ini
 	echo "mysql_ispconfig_user=ispconfig" >> autoinstall.ini
-	echo "mysql_ispconfig_password=afStEratXBsgatRtsa42CadwhQ" >> autoinstall.ini
+	echo "mysql_ispconfig_password=$IPSRamdomPW" >> autoinstall.ini
 	echo "join_multiserver_setup=$MULTISERVER" >> autoinstall.ini
     echo "mysql_master_hostname=$CFG_MASTER_FQDN" >> autoinstall.ini
 	echo "mysql_master_root_user=root" >> autoinstall.ini

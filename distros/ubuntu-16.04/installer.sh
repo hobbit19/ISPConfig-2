@@ -104,7 +104,7 @@ InstallUbuntuServer() {
     echo "mailman mailman/site_languages multiselect en ko" | debconf-set-selections
     echo "mailman mailman/default_server_language en" | debconf-set-selections
     echo "mailman mailman/used_languages en" | debconf-set-selections
-    echo "mailman mailman/site en" | debconf-set-selections
+    echo "mailman mailman/mailman/create_site_list yes" | debconf-set-selections
     echo "postfix postfix/main_mailer_type select Internet Site" | debconf-set-selections
     echo "postfix postfix/mailname string $CFG_HOSTNAME_FQDN" | debconf-set-selections
     apt-get -yqq install mailman > /dev/null 2>&1

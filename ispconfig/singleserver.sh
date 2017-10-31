@@ -33,7 +33,7 @@ ISPConfigSingleServerInstall(){
     echo
     echo "[expert]" >> autoinstall.ini
     echo "mysql_ispconfig_user=ispconfig" >> autoinstall.ini
-    echo "mysql_ispconfig_password=afStEratXBsgatRtsa42CadwhQ" >> autoinstall.ini
+    echo "mysql_ispconfig_password=$IPSRamdomPW" >> autoinstall.ini
     echo "join_multiserver_setup=n" >> autoinstall.ini
     echo "mysql_master_hostname=master.example.com" >> autoinstall.ini
     echo "mysql_master_root_user=root" >> autoinstall.ini
