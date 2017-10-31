@@ -1,5 +1,5 @@
-# User question answer
-Question() {
+# Ask Question Single Server
+AskQuestionsSingleServer() {
     echo "Please enter the information required for installation."
 
     while [ "x$CFG_HOSTNAME_FQDN" == "x" ]
