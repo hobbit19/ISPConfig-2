@@ -5,32 +5,7 @@
 # Create Date : 2017-10-30
 # Made by ysyuk910
 #
-
-# Loging
-exec > >(tee -i /var/log/ispconfig_setup.log)
-exec 2>&1
-
-# Global variables
-#   CFG_HOSTNAME_FQDN=`hostname -f`;
-    WT_BACKTITLE="ISPConfig 3 System Installer by KSCloud"
-
-# Bash Color
-    red='\033[0;31m'
-    green='\033[0;32m'
-    NC='\033[0m' # No Color
-
-# Setting Questions
-    CFG_HOSTNAME_FQDN=$(whiptail --title "HOSTNAME" --backtitle "$WT_BACKTITLE" --inputbox "Please specify Server Hostname" --nocancel 10 50 3>&1 1>&2 2>&3)
-    CFG_MYSQL_ROOT_PWD=$(whiptail --title "MySQL" --backtitle "$WT_BACKTITLE" --inputbox "Please specify a root password" --nocancel 10 50 3>&1 1>&2 2>&3)
-    MMLISTOWNER=$(whiptail --title "Mailman Site List Owner" --backtitle "$WT_BACKTITLE" --inputbox "Please specify the Mailman site list owner ex:example@example.com" --nocancel 10 50 3>&1 1>&2 2>&3)
-	MMLISTPASS=$(whiptail --title "Mailman Site List Password" --backtitle "$WT_BACKTITLE" --inputbox "Please specify the Mailman site list password" --nocancel 10 50 3>&1 1>&2 2>&3)
-	ROUNDCUBE_PWD=$(whiptail --title "ROUNDCUBE Database Name" --backtitle "$WT_BACKTITLE" --inputbox "Please specify the roundcube pasword" --nocancel 10 50 3>&1 1>&2 2>&3)
-    SSL_COUNTRY=$(whiptail --title "SSL Country" --backtitle "$WT_BACKTITLE" --inputbox "SSL Configuration - Country (ex. EN)" --nocancel 10 50 3>&1 1>&2 2>&3)
-    SSL_STATE=$(whiptail --title "SSL State" --backtitle "$WT_BACKTITLE" --inputbox "SSL Configuration - STATE (ex. Italy)" --nocancel 10 50 3>&1 1>&2 2>&3)
-    SSL_LOCALITY=$(whiptail --title "SSL Locality" --backtitle "$WT_BACKTITLE" --inputbox "SSL Configuration - Locality (ex. Udine)" --nocancel 10 50 3>&1 1>&2 2>&3)
-    SSL_ORGANIZATION=$(whiptail --title "SSL Organization" --backtitle "$WT_BACKTITLE" --inputbox "SSL Configuration - Organization (ex. Company L.t.d.)" --nocancel 10 50 3>&1 1>&2 2>&3)
-    SSL_ORGUNIT=$(whiptail --title "SSL Organization Unit" --backtitle "$WT_BACKTITLE" --inputbox "SSL Configuration - Organization Unit (ex. IT Department)" --nocancel 10 50 3>&1 1>&2 2>&3)
-
+InstallUbuntuServer() {
 # hostname
     echo -n "Setting Hostname..."
     echo "127.0.0.1   $CFG_HOSTNAME_FQDN localhost localhost.localdomain localhost4 localhost4.localdomain4" >> /etc/hosts
@@ -244,67 +219,4 @@ exec 2>&1
     sed -i "s/host'] = '';/host'] = 'localhost';/" /etc/roundcube/config.inc.php
     service apache2 restart > /dev/null 2>&1
     echo -e "${green}done! ${NC}\n"
-
-# ISPConfig
-    echo -n "Installing ISPConfig... "
-    cd /usr/local/src
-    wget https://www.ispconfig.org/downloads/ISPConfig-3-stable.tar.gz
-    tar xfz ISPConfig-3-stable.tar.gz
-    cd ispconfig3_install/install/
-    echo "Create INI file"
-    touch autoinstall.ini
-    echo "[install]" > autoinstall.ini
-    echo "language=en" >> autoinstall.ini
-    echo "install_mode=standard" >> autoinstall.ini
-    echo "hostname=$CFG_HOSTNAME_FQDN" >> autoinstall.ini
-    echo "mysql_hostname=localhost" >> autoinstall.ini
-    echo "mysql_root_user=root" >> autoinstall.ini
-    echo "mysql_root_password=$CFG_MYSQL_ROOT_PWD" >> autoinstall.ini
-    echo "mysql_database=dbispconfig" >> autoinstall.ini
-    echo "mysql_charset=utf8" >> autoinstall.ini
-    echo "http_server=apache" >> autoinstall.ini
-    echo "ispconfig_port=8080" >> autoinstall.ini
-    echo "ispconfig_use_ssl=y" >> autoinstall.ini
-    echo
-    echo "[ssl_cert]" >> autoinstall.ini
-    echo "ssl_cert_country=$SSL_COUNTRY" >> autoinstall.ini
-    echo "ssl_cert_state=$SSL_STATE" >> autoinstall.ini
-    echo "ssl_cert_locality=$SSL_LOCALITY" >> autoinstall.ini
-    echo "ssl_cert_organisation=$SSL_ORGANIZATION" >> autoinstall.ini
-    echo "ssl_cert_organisation_unit=$SSL_ORGUNIT" >> autoinstall.ini
-    echo "ssl_cert_common_name=$CFG_HOSTNAME_FQDN" >> autoinstall.ini
-    echo
-    echo "[expert]" >> autoinstall.ini
-    echo "mysql_ispconfig_user=ispconfig" >> autoinstall.ini
-    echo "mysql_ispconfig_password=afStEratXBsgatRtsa42CadwhQ" >> autoinstall.ini
-    echo "join_multiserver_setup=n" >> autoinstall.ini
-    echo "mysql_master_hostname=master.example.com" >> autoinstall.ini
-    echo "mysql_master_root_user=root" >> autoinstall.ini
-    echo "mysql_master_root_password=ispconfig" >> autoinstall.ini
-    echo "mysql_master_database=dbispconfig" >> autoinstall.ini
-    echo "configure_mail=y" >> autoinstall.ini
-    echo "configure_jailkit=y" >> autoinstall.ini
-    echo "configure_ftp=y" >> autoinstall.ini
-    echo "configure_dns=y" >> autoinstall.ini
-    echo "configure_apache=y" >> autoinstall.ini
-    echo "configure_nginx=n" >> autoinstall.ini
-    echo "configure_firewall=y" >> autoinstall.ini
-    echo "install_ispconfig_web_interface=y" >> autoinstall.ini
-    echo
-    echo "[update]" >> autoinstall.ini
-    echo "do_backup=yes" >> autoinstall.ini
-    echo "mysql_root_password=$CFG_MYSQL_ROOT_PWD" >> autoinstall.ini
-    echo "mysql_master_hostname=master.example.com" >> autoinstall.ini
-    echo "mysql_master_root_user=root" >> autoinstall.ini
-    echo "mysql_master_root_password=ispconfig" >> autoinstall.ini
-    echo "mysql_master_database=dbispconfig" >> autoinstall.ini
-    echo "reconfigure_permissions_in_master_database=no" >> autoinstall.ini
-    echo "reconfigure_services=yes" >> autoinstall.ini
-    echo "ispconfig_port=8080" >> autoinstall.ini
-    echo "create_new_ispconfig_ssl_cert=no" >> autoinstall.ini
-    echo "reconfigure_crontab=yes" >> autoinstall.ini
-    echo | php -q install.php --autoinstall=autoinstall.ini
-
-# ISPConfig Install Finish
-	echo -e "${green}Well done! ISPConfig installed and configured correctly :D ${NC}"
-	echo "Now you can connect to your ISPConfig installation at https://$CFG_HOSTNAME_FQDN:8080 or https://IP_ADDRESS:8080"
+}
