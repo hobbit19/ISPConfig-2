@@ -19,12 +19,20 @@ NC='\033[0m' # No Color
 PWD=$(pwd);
 
 # Load Script
-source $PWD/functions/*.sh
-source $PWD/distros/$DISTRO/*.sh
+source $PWD/functions/presystemcheck.sh
+source $PWD/functions/distros_check.sh
+source $PWD/functions/askquestionsingleserver.sh
+source $PWD/functions/askquestionmultiserver.sh
+
+source $PWD/ispconfig/singleserver.sh
+source $PWD/functions/multiserver.sh
+
+source $PWD/distros/$DISTRO/installer.sh
 
 # Check Linux distros
 echo "Checking your system, please wait..."
 LinuxDistros
+PreSystemCheck
 
 clear
 
