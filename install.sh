@@ -24,8 +24,7 @@ source $PWD/distros/$DISTRO/*.sh
 
 # Check Linux distros
 echo "Checking your system, please wait..."
-CheckLinux
-
+LinuxDistros
 
 clear
 

@@ -1,6 +1,6 @@
 # ISPConfig Single Server Install
 
-ISPConfigMultiServer(){
+ISPConfigMultiServerInstall(){
     
     echo -n "Installing ISPConfig... "
     cd /usr/local/src

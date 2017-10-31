@@ -1,6 +1,6 @@
 # ISPConfig Single Server Install
 
-ISPConfigSingleServer(){
+ISPConfigSingleServerInstall(){
     
     echo -n "Installing ISPConfig... "
     cd /usr/local/src
