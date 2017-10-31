@@ -37,28 +37,9 @@ AskQuestionsSingleServer() {
             ROUNDCUBE_PWD=$(whiptail --title "ROUNDCUBE Database Name" --backtitle "$WT_BACKTITLE" --inputbox "Please specify the roundcube pasword" --nocancel 10 50 3>&1 1>&2 2>&3)
         done
 
-    while [ "x$SSL_COUNTRY" == "x" ]
-        do
             SSL_COUNTRY=$(whiptail --title "SSL Country" --backtitle "$WT_BACKTITLE" --inputbox "SSL Configuration - Country (ex. EN)" --nocancel 10 50 3>&1 1>&2 2>&3)
-        done
-
-    while [ "x$SSL_STATE" == "x" ]
-        do
             SSL_STATE=$(whiptail --title "SSL State" --backtitle "$WT_BACKTITLE" --inputbox "SSL Configuration - STATE (ex. Italy)" --nocancel 10 50 3>&1 1>&2 2>&3)
-        done
-
-    while [ "x$SSL_LOCALITY" == "x" ]
-        do
             SSL_LOCALITY=$(whiptail --title "SSL Locality" --backtitle "$WT_BACKTITLE" --inputbox "SSL Configuration - Locality (ex. Udine)" --nocancel 10 50 3>&1 1>&2 2>&3)
-        done
-
-    while [ "x$SSL_ORGANIZATION" == "x" ]
-        do
             SSL_ORGANIZATION=$(whiptail --title "SSL Organization" --backtitle "$WT_BACKTITLE" --inputbox "SSL Configuration - Organization (ex. Company L.t.d.)" --nocancel 10 50 3>&1 1>&2 2>&3)
-        done
-
-    while [ "x$SSL_ORGUNIT" == "x" ]
-        do
             SSL_ORGUNIT=$(whiptail --title "SSL Organization Unit" --backtitle "$WT_BACKTITLE" --inputbox "SSL Configuration - Organization Unit (ex. IT Department)" --nocancel 10 50 3>&1 1>&2 2>&3)
-        done
 }
