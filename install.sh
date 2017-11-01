@@ -36,26 +36,12 @@ PreSystemCheck
 source $PWD/distros/$DISTRO/installer.sh
 
 clear
-echo "Welcome to ISPConfig Automation Install Script for KSCloud"
-echo "This script developed by KSCloud(ysyuk910)"
-echo
-echo "========================================="
-echo "ISPConfig 3 Automation installer"
-echo "========================================="
-echo
-echo "This script will do a nearly unattended installation of"
-echo "all software needed to run ISPConfig 3."
-echo "When this script starts running, it'll keep going all the way"
-echo "So before you continue, please make sure the following checklist is ok:"
-echo
-echo "- This is a clean standard clean installation for supported systems";
-echo "- Internet connection is working properly";
-echo
-echo
 
 echo "This Script ISPConfig Automation Installer for KSCloud"
 
 echo -e "This Server detected Linux Distribution is :" $ID-$VERSION_ID
+
+IPSRamdomPW=$(echo randompass)
 
 while [ "x$MULTISERVER" == "x" ]
     do
