@@ -43,6 +43,7 @@ echo -e "This Server detected Linux Distribution is :" $ID-$VERSION_ID
 
 IPSRamdomPW=$(echo randompass)
 
+
 while [ "x$MULTISERVER" == "x" ]
     do
         MULTISERVER=$(whiptail --title "MULTISERVER SETUP" --backtitle "$WT_BACKTITLE" --nocancel --radiolist "Would you like to install ISPConfig in a MultiServer Setup?" 10 50 2 "no" "(default)" ON "yes" "" OFF 3>&1 1>&2 2>&3)
