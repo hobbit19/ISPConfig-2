@@ -9,6 +9,12 @@ This Script following(스크립트 기준)
 - https://www.howtoforge.com/tutorial/perfect-server-ubuntu-16.04-with-apache-php-myqsl-pureftpd-bind-postfix-doveot-and-ispconfig
 
 * Script download and run(스크립트 다운 및 실행)
+Ubuntu 16.04
 ```shell
 cd /usr/local/src; wget --no-check-certificate -O installer.tgz "https://github.com/ysyukr/ISPConfig/tarball/master"; tar zxvf installer.tgz; cd *ISPConfig*; bash install.sh
+```
+
+CentOS 7
+```shell
+yum install wget -y; cd /usr/local/src; wget --no-check-certificate -O installer.tgz "https://github.com/ysyukr/ISPConfig/tarball/master"; tar zxvf installer.tgz; cd *ISPConfig*; bash install.sh
 ```
