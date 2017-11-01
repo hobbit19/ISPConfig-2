@@ -13,6 +13,12 @@ AskQuestionsMultiServer() {
             CFG_MYSQL_ROOT_PWD=$(whiptail --title "MySQL" --backtitle "$WT_BACKTITLE" --inputbox "Please specify a root password" --nocancel 10 50 3>&1 1>&2 2>&3)
         done
 
+	if (whiptail --title "Setup Master" --backtitle "$WT_BACKTITLE" --yesno "Do you want too setup a Master server?" 10 50) then
+		  CFG_SETUP_MASTER=y
+	  else
+		  CFG_SETUP_MASTER=n
+	  fi
+
     if [ $CFG_SETUP_MASTER == "n" ]; then
         while [ "x$CHECK_MASTER_CONNECTION" == "x" ]
 		do
